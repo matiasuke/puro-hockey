@@ -1,0 +1,190 @@
+════════════════════════════════════════════════════════════════════
+   AUTOMATIZACION VERCEL
+   PURO HOCKEY v1.0.0
+════════════════════════════════════════════════════════════════════
+
+ARCHIVOS CREADOS:
+═════════════════════════════════════════════════════════════════════
+
+✓ vercel.json
+  → Configuración automática de Vercel
+  → Framework: Vite
+  → Build: npm run build
+  → Output: dist
+
+✓ VERCEL-AUTO.ps1
+  → Script automatizado solo para Vercel
+  → Instala Vercel CLI
+  → Hace login automático
+  → Ejecuta vercel --prod --yes
+  → Obtiene URL final
+
+✓ RAILWAY-AUTO.ps1
+  → Script guiado para Railway
+  → Instruye cada paso
+  → Obtiene URLs
+  → Configura variables
+
+✓ DEPLOYMENT-FULL-AUTO.ps1
+  → Script maestro
+  → Ejecuta Vercel + Railway en secuencia
+  → Control total del flujo
+
+✓ DEPLOY-COMPLETO.bat
+  → Ejecutable (doble click)
+  → Corre el script completo
+
+════════════════════════════════════════════════════════════════════
+   OPCIONES DE EJECUCION
+════════════════════════════════════════════════════════════════════
+
+OPCION 1: DEPLOYMENT COMPLETO (RECOMENDADO)
+═════════════════════════════════════════════════════════════════════
+
+Ejecuta: DEPLOY-COMPLETO.bat
+
+O en PowerShell:
+  .\DEPLOYMENT-FULL-AUTO.ps1
+
+Qué hace:
+  1. Verifica requisitos (Git, Node, npm)
+  2. Instala Vercel CLI
+  3. Autentica con GitHub
+  4. Deploy a Vercel automático
+  5. Te guía en Railway
+  6. Obtiene URLs
+  7. Conecta Vercel + Railway
+
+
+OPCION 2: SOLO VERCEL
+═════════════════════════════════════════════════════════════════════
+
+Ejecuta: .\VERCEL-AUTO.ps1
+
+Qué hace:
+  1. Verifica requisitos
+  2. Instala Vercel CLI
+  3. Autentica
+  4. Deploy automático
+  5. Muestra URL
+
+
+OPCION 3: SOLO RAILWAY
+═════════════════════════════════════════════════════════════════════
+
+Ejecuta: .\RAILWAY-AUTO.ps1
+
+Qué hace:
+  1. Pide URL de Vercel
+  2. Te abre navegador a Railway
+  3. Te guía en cada paso
+  4. Configura variables automáticamente
+  5. Obtiene URL final
+  6. Actualiza Vercel
+
+
+════════════════════════════════════════════════════════════════════
+   FLUJO DE EJECUCION
+════════════════════════════════════════════════════════════════════
+
+PASO 1: VERCEL-AUTO.ps1
+───────────────────────
+Requisitos ✓
+  ↓
+Instalar CLI ✓
+  ↓
+Login con GitHub (navegador)
+  ↓
+Vercel Deploy Automático ✓
+  ↓
+URL: https://puro-hockey-xxxxx.vercel.app
+
+
+PASO 2: RAILWAY-AUTO.ps1
+────────────────────────
+Pedir URL Vercel
+  ↓
+Abrir Railway (navegador)
+  ↓
+Crear PostgreSQL (manual, 1-2 min)
+  ↓
+Crear Node.js (manual, pide confirmación)
+  ↓
+Configurar Variables (mostrar en pantalla)
+  ↓
+Obtener URL Railway
+  ↓
+Actualizar Vercel (abrir navegador)
+  ↓
+URL: https://puro-hockey-xxxx.railway.app
+
+
+RESULTADO FINAL:
+────────────────
+Frontend: https://puro-hockey-xxxxx.vercel.app ✅
+Backend:  https://puro-hockey-xxxx.railway.app ✅
+GitHub:   https://github.com/matiasuke/puro-hockey ✅
+
+Status: EN PRODUCCION
+
+════════════════════════════════════════════════════════════════════
+   REQUISITOS
+════════════════════════════════════════════════════════════════════
+
+✓ Git
+✓ Node.js
+✓ npm
+✓ Código en GitHub
+✓ Cuenta GitHub (para login)
+✓ Cuenta Vercel (free)
+✓ Cuenta Railway (free, $5 créditos)
+
+════════════════════════════════════════════════════════════════════
+   TIMINGS
+════════════════════════════════════════════════════════════════════
+
+VERCEL: 5-10 minutos
+  - Verificación: 1 min
+  - Login: 1 min
+  - Deploy: 3-5 min
+  - Obtener URL: 1 min
+
+RAILWAY: 15-20 minutos
+  - Crear PostgreSQL: 2 min
+  - Crear Node.js: 3 min
+  - Configurar variables: 5 min
+  - Deploy: 5-10 min
+  - Obtener URL: 1 min
+
+TOTAL: ~20-30 minutos
+
+════════════════════════════════════════════════════════════════════
+   TROUBLESHOOTING
+════════════════════════════════════════════════════════════════════
+
+Error: "Vercel CLI no encontrado"
+→ npm install -g vercel
+
+Error: "Login failed"
+→ Abre: https://vercel.com/auth/login
+→ Login manualmente
+→ Intenta de nuevo
+
+Error: "Cannot deploy"
+→ Verifica que código está en GitHub
+→ Ejecuta: git push
+
+Error: "DATABASE_URL no válido"
+→ Verifica que PostgreSQL está creado
+→ Copia exactamente: ${{Postgres.DATABASE_URL}}
+
+════════════════════════════════════════════════════════════════════
+
+¿LISTO?
+
+Ejecuta: DEPLOY-COMPLETO.bat
+
+O abre PowerShell en esta carpeta y ejecuta:
+  .\DEPLOYMENT-FULL-AUTO.ps1
+
+════════════════════════════════════════════════════════════════════

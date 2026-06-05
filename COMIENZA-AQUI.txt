@@ -1,0 +1,147 @@
+╔════════════════════════════════════════════════════════════════════╗
+║           PURO HOCKEY - COMIENZA AQUI                             ║
+║           Deployment Automático                                   ║
+╚════════════════════════════════════════════════════════════════════╝
+
+ARCHIVOS PREPARADOS:
+════════════════════════════════════════════════════════════════════
+
+vercel.json .......................... Configuración de Vercel
+VERCEL-NONINTERACTIVE.ps1 ........... Script Vercel (rápido)
+RAILWAY-AUTO.ps1 ................... Script Railway (guiado)
+DEPLOYMENT-FULL-AUTO.ps1 ........... Script completo
+EJECUTAR-DEPLOYMENT.md ............ Guía paso a paso
+COMIENZA-AQUI.txt ................. Este archivo
+
+════════════════════════════════════════════════════════════════════
+              ELIGE UNA OPCION
+════════════════════════════════════════════════════════════════════
+
+OPCION 1: MAS FACIL - DOBLE CLICK
+──────────────────────────────────
+
+1. Abre File Explorer (Windows + E)
+2. Ve a: C:\Users\Alumno\Documents\App\hockey-app
+3. Busca: DEPLOY-COMPLETO.bat
+4. Haz DOBLE CLICK
+
+Fin. PowerShell se abrirá automáticamente.
+
+
+OPCION 2: MAS RAPIDA - POWERSHELL
+──────────────────────────────────
+
+1. Presiona: Windows + R
+2. Escribe: powershell
+3. Presiona: Enter
+4. Copia y pega esto:
+
+   cd "C:\Users\Alumno\Documents\App\hockey-app"
+   .\VERCEL-NONINTERACTIVE.ps1
+
+5. Presiona: Enter
+
+Fin. El script comenzará automáticamente.
+
+
+OPCION 3: SOLO RAILWAY (si ya tienes Vercel)
+──────────────────────────────────────────────
+
+1. PowerShell en la carpeta
+2. Ejecuta:
+
+   .\RAILWAY-AUTO.ps1
+
+
+════════════════════════════════════════════════════════════════════
+              QUE NECESITAS PREPARADO
+════════════════════════════════════════════════════════════════════
+
+1. Token de Vercel (el script te pide)
+   → Obtenerlo en: https://vercel.com/account/tokens
+
+2. Navegador web
+   → Para confirmar URLs y configuración
+
+3. 15-20 minutos de tiempo
+   → No cierre la ventana hasta que termine
+
+
+════════════════════════════════════════════════════════════════════
+              DURANTE LA EJECUCION
+════════════════════════════════════════════════════════════════════
+
+El script hará:
+
+✓ Verifica que Git, Node, npm están instalados
+✓ Instala Vercel CLI automáticamente
+✓ Pide tu token de Vercel
+✓ Ejecuta deployment automático
+✓ Abre dashboard de Vercel
+✓ Obtiene tu URL final
+✓ Te guía al siguiente paso
+
+TODO AUTOMATIZADO - Solo copia y pega lo que pide.
+
+
+════════════════════════════════════════════════════════════════════
+              CUANDO PIDA TOKEN
+════════════════════════════════════════════════════════════════════
+
+El script te pedirá:
+  "Pega tu token de Vercel"
+
+Haz esto:
+
+1. Abre: https://vercel.com/account/tokens
+2. Click: "Create"
+3. Nombre: puro-hockey-deploy
+4. Click: "Create"
+5. COPIA el token (aparece una sola vez)
+6. Pega en PowerShell
+7. Presiona: Enter
+
+Listo!
+
+
+════════════════════════════════════════════════════════════════════
+              CUANDO PIDA URL DE VERCEL
+════════════════════════════════════════════════════════════════════
+
+El script abrirá navegador a:
+  https://vercel.com/dashboard
+
+Haz esto:
+
+1. Selecciona proyecto: puro-hockey
+2. Copia la URL (ej: https://puro-hockey-xxxxx.vercel.app)
+3. Pega en PowerShell
+4. Presiona: Enter
+
+Listo!
+
+
+════════════════════════════════════════════════════════════════════
+              RESULTADO FINAL
+════════════════════════════════════════════════════════════════════
+
+Frontend: https://puro-hockey-xxxxx.vercel.app
+Status: ✅ EN VIVO
+
+Próximo paso: Railway (el script te guía)
+
+
+════════════════════════════════════════════════════════════════════
+              EMPEZAMOS?
+════════════════════════════════════════════════════════════════════
+
+OPCION 1 (más fácil):
+  → Doble click en: DEPLOY-COMPLETO.bat
+
+OPCION 2 (más rápida):
+  → PowerShell → .\VERCEL-NONINTERACTIVE.ps1
+
+Lee: EJECUTAR-DEPLOYMENT.md para instrucciones detalladas
+
+
+════════════════════════════════════════════════════════════════════

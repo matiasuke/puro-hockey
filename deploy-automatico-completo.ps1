@@ -175,7 +175,8 @@ Write-Host ""
 Write-Host "   NODE_ENV = production" -ForegroundColor $Blue
 Write-Host "   PORT = 5000" -ForegroundColor $Blue
 Write-Host "   LOG_LEVEL = info" -ForegroundColor $Blue
-Write-Host "   DATABASE_URL = \${{Postgres.DATABASE_URL}}" -ForegroundColor $Blue
+Write-Host "   DATABASE_URL = " -NoNewline -ForegroundColor $Blue
+Write-Host "`${{Postgres.DATABASE_URL}}" -ForegroundColor $Blue
 Write-Host "   JWT_SECRET = tu-secret-muy-seguro-32-caracteres-minimo" -ForegroundColor $Blue
 Write-Host "   CORS_ORIGIN = $vercelUrl" -ForegroundColor $Blue
 Write-Host ""

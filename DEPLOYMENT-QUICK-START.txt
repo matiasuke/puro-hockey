@@ -1,0 +1,126 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                    PURO HOCKEY DEPLOYMENT                            ║
+║                     QUICK START GUIDE                                ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+STATUS: Codigo en GitHub ✅
+Repository: https://github.com/matiasuke/puro-hockey
+
+╔══════════════════════════════════════════════════════════════════════╗
+║ PASO 1: VERCEL (5 minutos)                                           ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+1. Abre: https://vercel.com/new
+2. Login con GitHub
+3. Click: "Import Git Repository"
+4. Busca: matiasuke/puro-hockey
+5. Framework: Vite
+6. Build: npm run build
+7. Output: dist
+8. Variables:
+   VITE_API_URL = https://placeholder.railway.app
+   VITE_WS_URL = wss://placeholder.railway.app
+9. Click: Deploy
+10. ESPERA 2-3 MINUTOS
+11. COPIA tu URL: https://puro-hockey-xxxxx.vercel.app
+
+✅ FRONTEND LISTO
+
+╔══════════════════════════════════════════════════════════════════════╗
+║ PASO 2: RAILWAY (10 minutos)                                         ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+1. Abre: https://railway.app
+2. Login con GitHub
+3. Click: "Start a New Project"
+4. Click: "Deploy from GitHub repo"
+5. Selecciona: matiasuke/puro-hockey
+
+CREAR SERVICIOS:
+A) PostgreSQL:
+   - Add Service → Database → PostgreSQL
+   - ESPERA 1-2 MINUTOS
+
+B) Node.js Backend:
+   - Add Service → GitHub Repo
+   - Repo: matiasuke/puro-hockey
+   - Name: puro-hockey-backend
+   - Deploy
+
+CONFIGURAR VARIABLES (en servicio Node.js):
+   NODE_ENV = production
+   PORT = 5000
+   LOG_LEVEL = info
+   DATABASE_URL = ${{Postgres.DATABASE_URL}}
+   JWT_SECRET = miClaveSeguraDeMinimo32Caracteres
+   CORS_ORIGIN = https://puro-hockey-xxxxx.vercel.app
+
+(Reemplaza xxxxx con URL de Vercel)
+
+ESPERA 5-10 MINUTOS para build
+
+OBTÉN URL PUBLICA:
+Click en servicio Node.js → Public URL
+COPIA: https://puro-hockey-xxxx.railway.app
+
+✅ BACKEND LISTO
+
+╔══════════════════════════════════════════════════════════════════════╗
+║ PASO 3: CONECTAR (2 minutos)                                         ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+Vuelve a Vercel: https://vercel.com/dashboard
+
+1. Abre proyecto: puro-hockey
+2. Settings → Environment Variables
+3. EDITA:
+   VITE_API_URL = https://puro-hockey-xxxx.railway.app
+   VITE_WS_URL = wss://puro-hockey-xxxx.railway.app
+4. Save
+5. ESPERA 2-3 MINUTOS
+
+✅ CONECTADO
+
+╔══════════════════════════════════════════════════════════════════════╗
+║ VERIFICACION                                                         ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+1. Frontend: https://puro-hockey-xxxxx.vercel.app
+   ↓ Debería ver la app
+
+2. Backend: https://puro-hockey-xxxx.railway.app/health
+   ↓ Debería ver: {"status":"ok"}
+
+3. Login:
+   Email: admin@example.com
+   Password: password
+   ↓ Debería funcionar
+
+╔══════════════════════════════════════════════════════════════════════╗
+║ RESULTADO                                                            ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+Frontend:  https://puro-hockey-xxxxx.vercel.app
+Backend:   https://puro-hockey-xxxx.railway.app
+GitHub:    https://github.com/matiasuke/puro-hockey
+
+Status: ✅ EN PRODUCCION
+
+Total time: ~15 minutos
+
+╔══════════════════════════════════════════════════════════════════════╗
+║ ARCHIVOS DE AYUDA                                                    ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+- DEPLOYMENT-MANUAL-PASO-A-PASO.md
+  → Guía detallada con screenshots
+
+- DEPLOYMENT-SIN-CLI.md
+  → Guía alternativa sin CLI tools
+
+- DEPLOY-FINAL.ps1
+  → Script automatizado (si funcionan scripts)
+
+═══════════════════════════════════════════════════════════════════════
+¡Listo! Comienza con Paso 1: https://vercel.com/new
+═══════════════════════════════════════════════════════════════════════

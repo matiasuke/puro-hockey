@@ -426,6 +426,7 @@ export const AdminView: React.FC<AdminViewProps> = ({ activeTab: initialTab = 't
           </table>
         </div>
       </Card>
+      )}
 
       {/* Estadísticas - mostrar en ambas tabs */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -442,7 +443,6 @@ export const AdminView: React.FC<AdminViewProps> = ({ activeTab: initialTab = 't
           <p className="text-gray-600 text-sm">Partidos Esta Semana</p>
         </Card>
       </div>
-      )}
 
       <Modal
         isOpen={showTorneoModal}

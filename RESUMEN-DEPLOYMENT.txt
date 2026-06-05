@@ -1,0 +1,192 @@
+════════════════════════════════════════════════════════════════════
+   DEPLOYMENT PURO HOCKEY - RESUMEN EJECUTIVO
+════════════════════════════════════════════════════════════════════
+
+ESTADO ACTUAL:
+════════════════════════════════════════════════════════════════════
+
+✓ Código en GitHub: https://github.com/matiasuke/puro-hockey
+✓ Configuración Vercel: vercel.json
+✗ Vercel: Error 404 (se redeployará)
+✗ Railway: No iniciado
+
+════════════════════════════════════════════════════════════════════
+   SOLUCION DEFINITIVA
+════════════════════════════════════════════════════════════════════
+
+Archivo principal: DEPLOY-AUTO-FINAL.bat
+
+Este script automatiza TODO:
+  1. Verifica Git, Node, npm
+  2. Instala Vercel CLI
+  3. Build automático
+  4. Deploy a Vercel (CLI)
+  5. Te guía en Railway
+  6. Obtiene URLs
+  7. Conecta Vercel + Railway
+  8. Verifica deployment
+
+
+════════════════════════════════════════════════════════════════════
+   COMO EJECUTAR
+════════════════════════════════════════════════════════════════════
+
+OPCION 1: DOBLE CLICK (MÁS FÁCIL)
+──────────────────────────────────
+
+Abre File Explorer:
+  C:\Users\Alumno\Documents\App\hockey-app
+
+Busca: DEPLOY-AUTO-FINAL.bat
+
+Haz DOBLE CLICK
+
+Fin. PowerShell se abrirá automáticamente.
+
+
+OPCION 2: POWERSHELL (MÁS RÁPIDO)
+──────────────────────────────────
+
+1. Presiona: Windows + R
+2. Escribe: powershell
+3. Presiona: Enter
+
+Copia y pega:
+
+cd "C:\Users\Alumno\Documents\App\hockey-app"; .\DEPLOY-AUTOMATIZADO-FINAL.ps1
+
+4. Presiona: Enter
+
+Fin. El deployment comienza automáticamente.
+
+
+════════════════════════════════════════════════════════════════════
+   QUE PASARÁ
+════════════════════════════════════════════════════════════════════
+
+FASE 1: VERCEL (5-10 min)
+─────────────────────────
+
+1. Verifica requisitos ..................... automático
+2. Instala Vercel CLI ..................... automático
+3. Build de la aplicación ................. automático
+4. Deploy a Vercel ........................ automático
+5. Abre navegador para confirmar
+6. Obtiene URL de Vercel
+   → Guardada en: VERCEL_URL.txt
+
+Status: ✅ VERCEL LISTO
+
+
+FASE 2: RAILWAY (10-15 min)
+──────────────────────────
+
+1. Abre Railway en navegador
+2. TÚ creas servicios (PostgreSQL + Node.js)
+3. TÚ configuras variables
+4. Script espera y obtiene URL
+   → Guardada en: RAILWAY_URL.txt
+
+Status: ✅ RAILWAY LISTO
+
+
+FASE 3: CONECTAR (2 min)
+────────────────────────
+
+1. Abre Vercel Dashboard
+2. TÚ actualizas variables con Railway URL
+3. Vercel se redeploya automáticamente
+
+Status: ✅ CONECTADO
+
+
+════════════════════════════════════════════════════════════════════
+   QUÉ NECESITAS TENER LISTO
+════════════════════════════════════════════════════════════════════
+
+✓ Navegador web abierto
+✓ Cuenta GitHub
+✓ Cuenta Vercel (login con GitHub)
+✓ Cuenta Railway (login con GitHub)
+✓ 15-20 minutos de tiempo
+✓ NO CERRAR PowerShell hasta terminar
+
+
+════════════════════════════════════════════════════════════════════
+   CUANDO PIDA "PRESIONA ENTER"
+════════════════════════════════════════════════════════════════════
+
+El script pausará en varios puntos:
+
+1. DEPLOY A VERCEL:
+   → El navegador se abrirá automáticamente
+   → Autoriza con GitHub
+   → Deploy ocurre automáticamente
+   → Presiona Enter cuando veas la URL
+
+2. CREAR SERVICIOS EN RAILWAY:
+   → El navegador se abrirá
+   → TÚ creas PostgreSQL (1-2 min)
+   → TÚ creas Node.js (esperas)
+   → TÚ configuras variables
+   → Presiona Enter cuando termines
+
+3. ACTUALIZAR VERCEL:
+   → El navegador se abrirá
+   → TÚ editas variables con Railway URL
+   → Presiona Enter cuando termines
+
+
+════════════════════════════════════════════════════════════════════
+   RESULTADO FINAL
+════════════════════════════════════════════════════════════════════
+
+Frontend: https://puro-hockey-xxxxx.vercel.app ✅
+Backend:  https://puro-hockey-xxxx.railway.app ✅
+GitHub:   https://github.com/matiasuke/puro-hockey ✅
+
+Status: EN PRODUCCION ✅
+
+
+URLs guardadas en:
+  - VERCEL_URL.txt
+  - RAILWAY_URL.txt
+
+
+════════════════════════════════════════════════════════════════════
+   TROUBLESHOOTING
+════════════════════════════════════════════════════════════════════
+
+¿Qué si falla el build?
+→ Verifica: npm run build (local)
+→ Si funciona local, el deployment funcionará
+
+¿Qué si no obtiene URL de Vercel?
+→ Ve a: https://vercel.com/dashboard
+→ Busca proyecto: puro-hockey
+→ Copia manualmente la URL
+
+¿Qué si Railway no conecta?
+→ Verifica DATABASE_URL = ${{Postgres.DATABASE_URL}}
+→ Verifica CORS_ORIGIN = tu URL de Vercel
+→ Espera 5-10 minutos al deploy
+
+¿Qué si falla la conexión?
+→ Verifica VITE_API_URL en Vercel
+→ Verifica que Railway está corriendo (verde)
+→ Redeploy en Vercel
+
+
+════════════════════════════════════════════════════════════════════
+   ¡LISTO!
+════════════════════════════════════════════════════════════════════
+
+Ejecuta ahora:
+
+OPCION 1 (fácil): Doble click en DEPLOY-AUTO-FINAL.bat
+OPCION 2 (rápido): PowerShell + .\DEPLOY-AUTOMATIZADO-FINAL.ps1
+
+Tiempo total: ~15-20 minutos
+
+¡Vamos! 🚀
+════════════════════════════════════════════════════════════════════

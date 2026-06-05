@@ -1,0 +1,105 @@
+===============================================
+DEPLOYMENT PURO HOCKEY v1.0.0
+Continuación después del error de Vercel
+===============================================
+
+ESTADO ACTUAL:
+- Código en GitHub: https://github.com/matiasuke/puro-hockey ✓
+- Vercel CLI deployment: FALLÓ (error 404)
+- Railway: Pendiente
+
+===============================================
+SOLUCIÓN: USAR DASHBOARD EN LUGAR DE CLI
+===============================================
+
+El nuevo proceso es MÁS FÁCIL y no requiere CLI:
+
+OPCIÓN 1 - SCRIPT AUTOMATIZADO (RECOMENDADO)
+==============================================
+1. Ejecuta: DEPLOY-DASHBOARD.bat
+2. El script abrirá navegadores automáticamente
+3. Sigue las instrucciones en pantalla
+4. Proporciona URLs cuando se pida
+5. ¡Listo!
+
+OPCIÓN 2 - MANUAL (SIN SCRIPT)
+===============================
+1. Lee: DEPLOYMENT-SIN-CLI.md
+2. Abre Vercel: https://vercel.com/new
+3. Importa: matiasuke/puro-hockey
+4. Configura variables de entorno
+5. Deploy
+6. Abre Railway: https://railway.app
+7. Crea PostgreSQL
+8. Crea Node.js service
+9. Configura variables
+10. Obtén URL y actualiza Vercel
+
+OPCIÓN 3 - GUÍA VISUAL
+======================
+Lee: DEPLOYMENT-VERCEL-RAILWAY-GUIA.md
+
+===============================================
+ARCHIVOS CREADOS
+===============================================
+
+✓ DEPLOYMENT-VERCEL-DASHBOARD.ps1
+  - Script PowerShell automatizado
+  - Abre navegadores automáticamente
+  - Pide URLs cuando está listo
+
+✓ DEPLOY-DASHBOARD.bat
+  - Ejecutable fácil (doble click)
+  - Corre el script PowerShell
+
+✓ DEPLOYMENT-SIN-CLI.md
+  - Guía paso a paso sin CLI
+  - Imágenes conceptuales de flujo
+  - Secciones de troubleshooting
+
+✓ PROXIMOS-PASOS.txt
+  - Este archivo
+
+===============================================
+SIGUIENTES PASOS
+===============================================
+
+AHORA MISMO:
+1. Elige una opción arriba (recomendado: Script Automatizado)
+2. Sigue las instrucciones
+3. Proporciona las URLs cuando se pida
+
+DESPUÉS:
+1. Verifica que frontend carga: https://puro-hockey-xxxxx.vercel.app
+2. Verifica health check: https://backend-xxxx.railway.app/health
+3. Prueba login: admin@example.com / password
+4. (Opcional) Ejecuta migraciones en Railway
+
+===============================================
+IMPORTANTE
+===============================================
+
+✓ Código debe estar en GitHub (ya está)
+✓ Vercel necesita login con GitHub (dashboard)
+✓ Railway necesita login con GitHub (dashboard)
+✓ Variables de entorno son CRÍTICAS
+✓ JWT_SECRET debe ser ÚNICO y muy largo (32+ chars)
+
+===============================================
+CONTACTO / AYUDA
+===============================================
+
+Si hay errores:
+1. Lee DEPLOYMENT-SIN-CLI.md sección TROUBLESHOOTING
+2. Verifica URLs y variables
+3. Asegúrate que código está en GitHub
+
+===============================================
+
+¿LISTO PARA CONTINUAR?
+
+Ejecuta: DEPLOY-DASHBOARD.bat
+
+O abre browser y ve a: https://vercel.com/new
+
+===============================================
