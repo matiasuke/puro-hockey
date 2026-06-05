@@ -1,0 +1,31 @@
+# Build stage
+FROM node:18-alpine AS builder
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+
+RUN npm ci
+
+COPY . .
+
+ARG VITE_API_URL=http://localhost:5000/api
+ENV VITE_API_URL=$VITE_API_URL
+
+RUN npm run build
+
+# Production stage - Serve with Node
+FROM node:18-alpine
+
+WORKDIR /app
+
+RUN npm install -g serve@latest
+
+COPY --from=builder /app/dist ./dist
+
+EXPOSE 3000
+
+HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:3000', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
+
+CMD ["serve", "-s", "dist", "-l", "3000"]

@@ -1,0 +1,22 @@
+/**
+ * Constantes para Estados de Pagos y Torneos
+ */
+
+const PAYMENT_STATUS = {
+  PENDIENTE: 'PENDIENTE',
+  COMPLETADO: 'COMPLETADO',
+  RECHAZADO: 'RECHAZADO',
+  EXPIRADO: 'EXPIRADO',
+};
+
+const TORNEO_STATUS = {
+  PENDIENTE_PAGO: 'PENDIENTE_PAGO',
+  ACTIVO: 'ACTIVO',
+  SUSPENDIDO: 'SUSPENDIDO',
+  FINALIZADO: 'FINALIZADO',
+};
+
+module.exports = {
+  PAYMENT_STATUS,
+  TORNEO_STATUS,
+};

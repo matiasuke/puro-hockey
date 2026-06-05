@@ -1,0 +1,51 @@
+name: Deploy Frontend to Vercel
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'package.json'
+      - 'vite.config.ts'
+      - '.github/workflows/deploy-frontend.yml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://puro-hockey.com
+
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Install Vercel CLI
+      run: npm install -g vercel@latest
+
+    - name: Build project artifacts
+      run: npm ci && npm run build
+
+    - name: Deploy to Vercel (Production)
+      run: |
+        vercel deploy \
+          --token=${{ secrets.VERCEL_TOKEN }} \
+          --prod \
+          --name puro-hockey
+      env:
+        VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+        VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+    - name: Comment PR with deployment URL
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: '🚀 Deployed to Vercel! Check your deployment at https://puro-hockey.com'
+          })
