@@ -4,6 +4,7 @@ Sistema integral de gestión de torneos de hockey con soporte para múltiples ro
 
 ## ✨ Características
 
+### Frontend
 - ✅ **Autenticación segura** con JWT
 - ✅ **Vista Pública** con Fixture, Tabla de Posiciones y Goleadores
 - ✅ **Mesa de Control** optimizada para tablets (registro en vivo de goles y tarjetas)
@@ -11,6 +12,17 @@ Sistema integral de gestión de torneos de hockey con soporte para múltiples ro
 - ✅ **Gestión de estado** con Zustand
 - ✅ **Responsive design** (mobile-first)
 - ✅ **Diseño profesional** WCAG AAA accesible
+- ✅ **Sistema de pagos** integrado (4 planes de suscripción)
+
+### Backend (Fase 10)
+- ✅ **API REST completa** con 50+ endpoints
+- ✅ **Autenticación JWT** con renovación de tokens
+- ✅ **Control de acceso basado en roles** (RBAC)
+- ✅ **7 modelos de datos** (Usuario, Club, Torneo, Equipo, Jugador, Asignación)
+- ✅ **Base de datos PostgreSQL** con migraciones automáticas
+- ✅ **Validación de datos** en todos los endpoints
+- ✅ **Manejo de errores** robusto
+- ✅ **Scripts de automatización** (setup.sh / setup.bat)
 
 ## 🚀 Inicio Rápido
 
