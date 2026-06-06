@@ -3,10 +3,11 @@
  * Gestiona los endpoints para configurar la plataforma
  */
 
-const express = require('express');
+import express from 'express';
+import configController from '../controllers/configController.js';
+import { verifyToken, verifyRole } from '../middleware/auth.js';
+
 const router = express.Router();
-const configController = require('../controllers/configController');
-const { verifyToken, verifyRole } = require('../middleware/auth');
 
 /**
  * GET /api/config
@@ -63,4 +64,4 @@ router.put('/bank-info', verifyToken, verifyRole(['admin']), configController.up
  */
 router.post('/reset', verifyToken, verifyRole(['admin']), configController.resetConfig);
 
-module.exports = router;
+export default router;

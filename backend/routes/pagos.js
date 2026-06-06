@@ -3,10 +3,11 @@
  * Gestiona todos los endpoints relacionados con pagos por transferencia
  */
 
-const express = require('express');
+import express from 'express';
+import pagosController from '../controllers/pagosController.js';
+import { verifyToken, verifyRole } from '../middleware/auth.js';
+
 const router = express.Router();
-const pagosController = require('../controllers/pagosController');
-const { verifyToken, verifyRole } = require('../middleware/auth');
 
 /**
  * Rutas públicas (requieren autenticación)
@@ -74,4 +75,4 @@ router.put('/:id/rechazar', verifyToken, verifyRole(['admin']), pagosController.
  */
 router.delete('/:id', verifyToken, verifyRole(['admin']), pagosController.eliminar);
 
-module.exports = router;
+export default router;
