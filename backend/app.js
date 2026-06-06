@@ -400,6 +400,82 @@ app.get('/api/torneos/:id', authMiddleware, async (req, res) => {
 });
 
 // ============================================================================
+// RUTAS ADICIONALES (Placeholder)
+// ============================================================================
+
+/**
+ * Obtener partidos
+ * GET /api/partidos
+ */
+app.get('/api/partidos', authMiddleware, async (req, res) => {
+    res.json({
+        success: true,
+        data: [],
+        message: 'Endpoint de partidos - Próximamente'
+    });
+});
+
+/**
+ * Obtener equipos
+ * GET /api/equipos
+ */
+app.get('/api/equipos', authMiddleware, async (req, res) => {
+    res.json({
+        success: true,
+        data: [],
+        message: 'Endpoint de equipos - Próximamente'
+    });
+});
+
+/**
+ * Obtener jugadores
+ * GET /api/jugadores
+ */
+app.get('/api/jugadores', authMiddleware, async (req, res) => {
+    res.json({
+        success: true,
+        data: [],
+        message: 'Endpoint de jugadores - Próximamente'
+    });
+});
+
+/**
+ * Obtener usuarios
+ * GET /api/usuarios
+ */
+app.get('/api/usuarios', authMiddleware, async (req, res) => {
+    res.json({
+        success: true,
+        data: [],
+        message: 'Endpoint de usuarios - Próximamente'
+    });
+});
+
+/**
+ * Obtener asignaciones
+ * GET /api/asignaciones
+ */
+app.get('/api/asignaciones', authMiddleware, async (req, res) => {
+    res.json({
+        success: true,
+        data: [],
+        message: 'Endpoint de asignaciones - Próximamente'
+    });
+});
+
+/**
+ * Obtener pagos
+ * GET /api/pagos
+ */
+app.get('/api/pagos', authMiddleware, async (req, res) => {
+    res.json({
+        success: true,
+        data: [],
+        message: 'Endpoint de pagos - Próximamente'
+    });
+});
+
+// ============================================================================
 // ERROR HANDLING
 // ============================================================================
 
