@@ -408,11 +408,7 @@ app.get('/api/torneos/:id', authMiddleware, async (req, res) => {
  * GET /api/partidos
  */
 app.get('/api/partidos', authMiddleware, async (req, res) => {
-    res.json({
-        success: true,
-        data: [],
-        message: 'Endpoint de partidos - Próximamente'
-    });
+    res.json([]);
 });
 
 /**
@@ -420,11 +416,7 @@ app.get('/api/partidos', authMiddleware, async (req, res) => {
  * GET /api/equipos
  */
 app.get('/api/equipos', authMiddleware, async (req, res) => {
-    res.json({
-        success: true,
-        data: [],
-        message: 'Endpoint de equipos - Próximamente'
-    });
+    res.json([]);
 });
 
 /**
@@ -432,11 +424,7 @@ app.get('/api/equipos', authMiddleware, async (req, res) => {
  * GET /api/jugadores
  */
 app.get('/api/jugadores', authMiddleware, async (req, res) => {
-    res.json({
-        success: true,
-        data: [],
-        message: 'Endpoint de jugadores - Próximamente'
-    });
+    res.json([]);
 });
 
 /**
@@ -444,23 +432,23 @@ app.get('/api/jugadores', authMiddleware, async (req, res) => {
  * GET /api/usuarios
  */
 app.get('/api/usuarios', authMiddleware, async (req, res) => {
-    res.json({
-        success: true,
-        data: [],
-        message: 'Endpoint de usuarios - Próximamente'
-    });
+    res.json([]);
 });
 
 /**
- * Obtener asignaciones
+ * Obtener asignaciones/calendario
  * GET /api/asignaciones
  */
 app.get('/api/asignaciones', authMiddleware, async (req, res) => {
-    res.json({
-        success: true,
-        data: [],
-        message: 'Endpoint de asignaciones - Próximamente'
-    });
+    res.json([]);
+});
+
+/**
+ * Obtener asignaciones por calendario
+ * GET /api/asignaciones/calendario
+ */
+app.get('/api/asignaciones/calendario', authMiddleware, async (req, res) => {
+    res.json([]);
 });
 
 /**
@@ -468,11 +456,7 @@ app.get('/api/asignaciones', authMiddleware, async (req, res) => {
  * GET /api/pagos
  */
 app.get('/api/pagos', authMiddleware, async (req, res) => {
-    res.json({
-        success: true,
-        data: [],
-        message: 'Endpoint de pagos - Próximamente'
-    });
+    res.json([]);
 });
 
 // ============================================================================
