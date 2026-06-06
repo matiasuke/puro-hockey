@@ -9,9 +9,28 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 import bcryptjs from 'bcryptjs';
-import { initializeDatabase, query, getOne, getAll } from './db.js';
 
 dotenv.config();
+
+// Determinar si usar base de datos real o demo
+let initializeDatabase, query, getOne, getAll;
+let isDemoMode = !process.env.DATABASE_URL;
+
+if (isDemoMode) {
+    console.log('🔶 Modo DEMO: usando base de datos en memoria');
+    const { initializeDemoDatabase, query: demoQuery, getOne: demoGetOne, getAll: demoGetAll } = await import('./demo-db.js');
+    initializeDatabase = initializeDemoDatabase;
+    query = demoQuery;
+    getOne = demoGetOne;
+    getAll = demoGetAll;
+} else {
+    console.log('✅ Usando PostgreSQL');
+    const dbModule = await import('./db.js');
+    initializeDatabase = dbModule.initializeDatabase;
+    query = dbModule.query;
+    getOne = dbModule.getOne;
+    getAll = dbModule.getAll;
+}
 
 const app = express();
 const PORT = process.env.PORT || 5000;

@@ -27,6 +27,13 @@ pool.on('error', (err) => {
  * Inicializar base de datos - Crear tablas si no existen
  */
 export async function initializeDatabase() {
+    // Verificar si DATABASE_URL está configurada
+    if (!process.env.DATABASE_URL) {
+        console.warn('⚠️  DATABASE_URL no configurada. Ejecutando en modo DEMO sin persistencia.');
+        console.warn('   Para usar la base de datos, configura DATABASE_URL en las variables de entorno.');
+        return;
+    }
+
     const client = await pool.connect();
 
     try {
