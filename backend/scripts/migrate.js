@@ -7,7 +7,7 @@
 
 import fs from 'fs';
 import path from 'path';
-import db from '../config/database';
+import db from '../config/database.js';
 
 // Colores para output
 const colors = {

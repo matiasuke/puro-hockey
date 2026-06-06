@@ -3,8 +3,8 @@
  * Registra los pagos por transferencia de los torneos
  */
 
-import db from '../config/database';
-import { PAYMENT_STATUS, TORNEO_STATUS } from '../constants/paymentStatus';
+import db from '../config/database.js';
+import { PAYMENT_STATUS, TORNEO_STATUS } from '../constants/paymentStatus.js';
 
 class Pago {
   /**
@@ -22,7 +22,7 @@ class Pago {
 
     try {
       // Obtener información del plan para obtener el monto
-      import { data: planes } from '../data/pricingPlans';
+      import { data: planes } from '../data/pricingPlans.js';
       const plan = planes.find((p) => p.id === plan_id);
       const monto = plan ? plan.precio : 0;
 

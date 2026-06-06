@@ -3,8 +3,8 @@
  * Gestiona las operaciones de pagos por transferencia
  */
 
-import Pago from '../models/Pago';
-import { PAYMENT_STATUS, TORNEO_STATUS } from '../constants/paymentStatus';
+import Pago from '../models/Pago.js';
+import { PAYMENT_STATUS, TORNEO_STATUS } from '../constants/paymentStatus.js';
 
 /**
  * GET /api/pagos

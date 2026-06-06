@@ -5,7 +5,7 @@
  * Carga datos iniciales en la base de datos
  */
 
-import db from '../config/database';
+import db from '../config/database.js';
 import bcrypt from 'bcryptjs';
 
 // Colores para output
