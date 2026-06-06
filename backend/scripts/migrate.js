@@ -5,9 +5,9 @@
  * Ejecuta todas las migraciones SQL contra la base de datos
  */
 
-const fs = require('fs');
-const path = require('path');
-const db = require('../config/database');
+import fs from 'fs';
+import path from 'path';
+import db from '../config/database';
 
 // Colores para output
 const colors = {

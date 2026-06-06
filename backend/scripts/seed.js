@@ -5,8 +5,8 @@
  * Carga datos iniciales en la base de datos
  */
 
-const db = require('../config/database');
-const bcrypt = require('bcryptjs');
+import db from '../config/database';
+import bcrypt from 'bcryptjs';
 
 // Colores para output
 const colors = {

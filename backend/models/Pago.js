@@ -3,8 +3,8 @@
  * Registra los pagos por transferencia de los torneos
  */
 
-const db = require('../config/database');
-const { PAYMENT_STATUS, TORNEO_STATUS } = require('../constants/paymentStatus');
+import db from '../config/database';
+import { PAYMENT_STATUS, TORNEO_STATUS } from '../constants/paymentStatus';
 
 class Pago {
   /**
@@ -22,7 +22,7 @@ class Pago {
 
     try {
       // Obtener información del plan para obtener el monto
-      const { data: planes } = require('../data/pricingPlans');
+      import { data: planes } from '../data/pricingPlans';
       const plan = planes.find((p) => p.id === plan_id);
       const monto = plan ? plan.precio : 0;
 
@@ -238,4 +238,4 @@ class Pago {
   }
 }
 
-module.exports = Pago;
+export default Pago;

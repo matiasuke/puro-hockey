@@ -3,14 +3,44 @@
  * Gestiona la configuración global de la plataforma (planes de pago, datos bancarios, etc.)
  */
 
-const db = require('../config/database');
-const { PRICING_PLANS, BANK_INFO } = require('../data/pricingPlans');
+import db from '../config/database';
+import { PRICING_PLANS, BANK_INFO } from '../data/pricingPlans';
 
 /**
  * GET /api/config
  * Obtener configuración actual
  */
-exports.getConfig = async (req, res) => {
+
+
+
+/**
+ * GET /api/config/planes
+ * Obtener solo los planes de pago
+ */
+
+
+
+/**
+ * GET /api/config/bank-info
+ * Obtener solo datos bancarios
+ */
+
+
+
+/**
+ * PUT /api/config/planes
+/**
+ * Controlador de Configuración
+ * Gestiona la configuración global de la plataforma (planes de pago, datos bancarios, etc.)
+ */
+
+import db from '../config/database';
+import { PRICING_PLANS, BANK_INFO } from '../data/pricingPlans';
+
+/**
+ * GET /api/config
+ * Obtener configuración actual
+ */
   try {
     // Obtener de la BD si existe, si no usar defaults
     const result = await db.query(
@@ -52,7 +82,6 @@ exports.getConfig = async (req, res) => {
  * GET /api/config/planes
  * Obtener solo los planes de pago
  */
-exports.getPlanes = async (req, res) => {
   try {
     const result = await db.query(`SELECT planes FROM config LIMIT 1`);
 
@@ -76,7 +105,6 @@ exports.getPlanes = async (req, res) => {
  * GET /api/config/bank-info
  * Obtener solo datos bancarios
  */
-exports.getBankInfo = async (req, res) => {
   try {
     const result = await db.query(`SELECT banco_info FROM config LIMIT 1`);
 
@@ -100,7 +128,6 @@ exports.getBankInfo = async (req, res) => {
  * PUT /api/config/planes
  * Actualizar planes de pago (admin)
  */
-exports.updatePlanes = async (req, res) => {
   try {
     const { planes } = req.body;
 
@@ -161,7 +188,6 @@ exports.updatePlanes = async (req, res) => {
  * PUT /api/config/bank-info
  * Actualizar datos bancarios (admin)
  */
-exports.updateBankInfo = async (req, res) => {
   try {
     const { banco, cuenta, cbu, alias, titular, cuit } = req.body;
 
@@ -220,7 +246,6 @@ exports.updateBankInfo = async (req, res) => {
  * POST /api/config/reset
  * Resetear configuración a valores por defecto (admin)
  */
-exports.resetConfig = async (req, res) => {
   try {
     // Verificar que sea admin
     if (req.user.role !== 'admin') {
@@ -256,4 +281,13 @@ exports.resetConfig = async (req, res) => {
       error: error.message,
     });
   }
+};
+
+export default {
+  getConfig,
+  getPlanes,
+  getBankInfo,
+  updatePlanes,
+  updateBankInfo,
+  resetConfig,
 };

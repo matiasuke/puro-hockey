@@ -3,15 +3,15 @@
  * Gestiona las operaciones de pagos por transferencia
  */
 
-const Pago = require('../models/Pago');
-const { PAYMENT_STATUS, TORNEO_STATUS } = require('../constants/paymentStatus');
+import Pago from '../models/Pago';
+import { PAYMENT_STATUS, TORNEO_STATUS } from '../constants/paymentStatus';
 
 /**
  * GET /api/pagos
  * Obtener todos los pagos (admin)
  * Filtros: estado, torneo_id
  */
-exports.obtenerTodos = async (req, res) => {
+const obtenerTodos = async (req, res) => {
   try {
     const { estado, torneo_id } = req.query;
 
@@ -40,7 +40,7 @@ exports.obtenerTodos = async (req, res) => {
  * GET /api/pagos/pendientes
  * Obtener pagos pendientes de confirmación (admin)
  */
-exports.obtenerPendientes = async (req, res) => {
+const obtenerPendientes = async (req, res) => {
   try {
     const pagos = await Pago.obtenerPendientes();
 
@@ -63,7 +63,7 @@ exports.obtenerPendientes = async (req, res) => {
  * GET /api/pagos/:id
  * Obtener un pago específico
  */
-exports.obtenerPorId = async (req, res) => {
+const obtenerPorId = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -94,7 +94,7 @@ exports.obtenerPorId = async (req, res) => {
  * GET /api/pagos/torneo/:torneoId
  * Obtener pagos de un torneo específico
  */
-exports.obtenerPorTorneo = async (req, res) => {
+const obtenerPorTorneo = async (req, res) => {
   try {
     const { torneoId } = req.params;
 
@@ -119,7 +119,7 @@ exports.obtenerPorTorneo = async (req, res) => {
  * POST /api/pagos
  * Crear un nuevo pago (club registra su transferencia)
  */
-exports.crear = async (req, res) => {
+const crear = async (req, res) => {
   try {
     const { torneo_id, plan_id, numero_referencia, fecha_transferencia, comprobante_url } =
       req.body;
@@ -161,7 +161,7 @@ exports.crear = async (req, res) => {
  * PUT /api/pagos/:id/confirmar
  * Confirmar un pago y habilitar el torneo (admin)
  */
-exports.confirmar = async (req, res) => {
+const confirmar = async (req, res) => {
   try {
     const { id } = req.params;
     const { notas } = req.body;
@@ -202,7 +202,7 @@ exports.confirmar = async (req, res) => {
  * PUT /api/pagos/:id/rechazar
  * Rechazar un pago (admin)
  */
-exports.rechazar = async (req, res) => {
+const rechazar = async (req, res) => {
   try {
     const { id } = req.params;
     const { motivo } = req.body;
@@ -243,7 +243,7 @@ exports.rechazar = async (req, res) => {
  * DELETE /api/pagos/:id
  * Eliminar un pago (solo admin)
  */
-exports.eliminar = async (req, res) => {
+const eliminar = async (req, res) => {
   try {
     const { id } = req.params;
 
@@ -277,4 +277,15 @@ exports.eliminar = async (req, res) => {
       error: error.message,
     });
   }
+};
+
+export default {
+  obtenerTodos,
+  obtenerPendientes,
+  obtenerPorId,
+  obtenerPorTorneo,
+  crear,
+  confirmar,
+  rechazar,
+  eliminar,
 };

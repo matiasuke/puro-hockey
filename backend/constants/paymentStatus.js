@@ -16,7 +16,7 @@ const TORNEO_STATUS = {
   FINALIZADO: 'FINALIZADO',
 };
 
-module.exports = {
+export default {
   PAYMENT_STATUS,
   TORNEO_STATUS,
 };
